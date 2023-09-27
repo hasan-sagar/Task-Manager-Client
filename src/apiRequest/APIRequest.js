@@ -12,7 +12,7 @@ import {
 } from "../redux/state-slice/task-slice";
 import store from "../redux/store/store";
 
-const BaseUrl = "http://localhost:5000/api/v1";
+const BaseUrl = "https://task-manager-server-91ot.onrender.com/api/v1";
 const HeaderToken = { headers: { token: getToken() } };
 
 //user registration
@@ -133,10 +133,10 @@ export function TaskListByStatus(status) {
     } else {
       ErrorToast("Something Went Wrong");
     }
-  }).catch((err)=>{
+  }).catch((err) => {
     ErrorToast("Something Went Wrong Or Try To Add New Task")
     store.dispatch(HideLoader())
-});
+  });
 }
 
 export function DeleteTaskRequest(id) {
